@@ -19,7 +19,15 @@ class ViewController: UIViewController {
   }
 
   @IBAction func didTapButton(_ sender: Any) {
-    
+    if let text = txtAddItem.text {
+      if text == "" {
+        return
+      }
+      
+      txtList.text.append("\(text)\n")
+      txtAddItem.text = ""
+      txtAddItem.resignFirstResponder()
+    }
   }
 }
 
